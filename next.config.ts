@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export", // ✅ Ensure static export for Cloudflare Pages
+  trailingSlash: true, // ✅ Fix potential missing trailing slashes
+  reactStrictMode: true,
 };
 
 export default nextConfig;
+
