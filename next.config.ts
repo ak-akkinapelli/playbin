@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export", // ✅ Ensure static export for Cloudflare Pages
+  output: "standalone", // ✅ Ensure static export for Cloudflare Pages
   trailingSlash: true, // ✅ Fix potential missing trailing slashes
   reactStrictMode: true,
 };
