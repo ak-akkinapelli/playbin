@@ -1,0 +1,11 @@
+name = "playbin"
+compatibility_date = "2025-06-01"
+
+[build]
+command = "npm run build"
+
+[site]
+bucket = ".next"
+
+[env.production]
+main = "server/index.js"
