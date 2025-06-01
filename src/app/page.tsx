@@ -1,7 +1,22 @@
-import Image from "next/image";
+// app/page.tsx
+'use client'
+
+import { useEffect, useState } from 'react'
+import Songs from './components/Songs'
 
 export default function Home() {
+  const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
+
+
   return (
-    <div>music player</div>
-  );
+    <main className="p-8" suppressHydrationWarning>
+      <div className="max-w-6xl mx-auto space-y-8">
+        <h1 className="text-4xl font-bold mb-8">🎵 My Music Player</h1>
+
+        {/* R2 Songs Section */}
+        <Songs/>
+      </div>
+    </main>
+  )
 }
