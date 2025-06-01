@@ -1,4 +1,4 @@
-name = "playbin"
+name = "playbin-worker"
 compatibility_date = "2025-06-01"
 
 [build]
@@ -8,5 +8,4 @@ command = "npm run build"
 bucket = ".next"
 
 [env.production]
-main = ".next/server/app.js" # ✅ Use Next.js output
-
+main = "src/worker.js" 
