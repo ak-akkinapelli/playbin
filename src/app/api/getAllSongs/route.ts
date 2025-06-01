@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { fetchAllSongsFromR2 } from "@/lib/r2";
+export const dynamic = 'force-static'
 
 export async function GET() {
   try {
