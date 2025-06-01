@@ -1,12 +1,10 @@
 // app/page.tsx
 'use client'
 
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import Songs from './components/Songs'
 
 export default function Home() {
-  const [loading, setLoading] = useState<boolean>(true)
-  const [error, setError] = useState<string | null>(null)
 
 
   return (

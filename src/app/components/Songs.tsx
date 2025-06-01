@@ -20,7 +20,7 @@ const Songs = () => {
     const loadSongs = async () => {
         try {
             setLoading(true);
-            const response = await fetch("/api/getAllSongs"); // ✅ New API call
+            const response = await fetch("/api/getAllSongs");
             const data = await response.json();
 
             if (!data.songs || data.songs.length === 0) {
@@ -87,8 +87,6 @@ const Songs = () => {
                                 <div className="flex-1">
                                     <h3 className="font-semibold text-lg">{song.name}</h3>
                                 </div>
-
-                                {/* ✅ Stream the song directly */}
                                 <audio controls>
                                     <source src={song.url} type="audio/mp3" />
                                     Your browser does not support the audio element.

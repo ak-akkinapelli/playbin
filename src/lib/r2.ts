@@ -4,7 +4,7 @@ const r2Config = {
   accountId: process.env.NEXT_PUBLIC_R2_ACCOUNT_ID!,
   accessKeyId: process.env.NEXT_PUBLIC_R2_ACCESS_KEY_ID!,
   secretAccessKey: process.env.NEXT_PUBLIC_R2_SECRET_ACCESS_KEY!,
-  bucketName: "songs", // ✅ Set to your bucket name
+  bucketName: "songs",
   publicUrl: "https://pub-2f2d28caa46445a1a656df0be3c543a0.r2.dev",
 };
 
@@ -30,7 +30,7 @@ export async function fetchAllSongsFromR2() {
    return response.Contents.map((file, index) => ({
   id: index + 1,
   name: file.Key ?? "Unknown",
-  url: `${r2Config.publicUrl}/${encodeURIComponent(file.Key ?? '')}`, // ✅ Encode the file name
+  url: `${r2Config.publicUrl}/${encodeURIComponent(file.Key ?? '')}`, 
   size: file.Size || 0,
 }));
   } catch (error) {
