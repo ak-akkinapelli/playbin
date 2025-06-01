@@ -8,4 +8,5 @@ command = "npm run build"
 bucket = ".next"
 
 [env.production]
-main = "server/index.js"
+main = ".next/server/app.js" # ✅ Use Next.js output
+
