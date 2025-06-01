@@ -1,3 +1,4 @@
-name = "playbin"
+name = "playbin-worker"
 compatibility_date = "2025-06-01"
-pages_build_output_dir = ".next" # ✅ Properly configures Pages build output
+main = "src/worker.js"
+assets = { directory = ".next/static", binding = "ASSETS" } # ✅ Ensures static files are served

@@ -2,12 +2,9 @@
 const nextConfig = {
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    unoptimized: true, // ✅ Ensures Cloudflare handles images properly
   },
-  experimental: {
-    optimizeServerRendering: true, // ✅ Helps reduce large build files
-  },
-  output: "standalone", // ✅ Allows API routes to work correctly on Cloudflare Pages
+  output: "standalone", // ✅ Required for running Next.js in Workers
 };
 
 module.exports = nextConfig;

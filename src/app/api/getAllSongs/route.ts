@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { fetchAllSongsFromR2 } from "@/lib/r2";
 
-export const runtime = "edge";
 
 export async function GET() {
   try {
