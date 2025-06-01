@@ -2,3 +2,12 @@ name = 'playbin'
 compatibility_date = "2025-06-01"
 main = "src/worker.js"
 assets = { directory = ".next/static", binding = "ASSETS" } # ✅ Ensures static files are served
+
+[[r2_buckets]]
+binding = "SONG_BUCKET"
+bucket_name = "songs"
+
+[vars]
+R2_PUBLIC_URL = "https://pub-2f2d28caa46445a1a656df0be3c543a0.r2.dev"
+
+
