@@ -18,10 +18,23 @@ const Songs = () => {
     }, [songs]);
 
     const loadSongs = async () => {
+        // ✅ Use Next.js API route - works for both local and production
+        const baseUrl = "/api/getAllSongs";
+
         try {
             setLoading(true);
-            const response = await fetch("/api/getAllSongs");
+            const response = await fetch(baseUrl);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
             const data = await response.json();
+
+            if (data.error) {
+                setError(data.error);
+                return;
+            }
 
             if (!data.songs || data.songs.length === 0) {
                 setError("No audio files found in R2 bucket.");
@@ -29,9 +42,10 @@ const Songs = () => {
             }
 
             setSongs(data.songs);
+            setError(null); // Clear any previous errors
         } catch (err) {
             console.error("Error loading songs:", err);
-            setError("Failed to fetch songs from Cloudflare R2.");
+            setError("Failed to fetch songs from R2 bucket.");
         } finally {
             setLoading(false);
         }
