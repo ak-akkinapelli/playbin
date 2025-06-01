@@ -1,9 +1,9 @@
 const nextConfig = {
   trailingSlash: true,
   images: {
-    unoptimized: true, // ✅ Ensures Cloudflare handles images properly
+    unoptimized: true, // ✅ Cloudflare handles images properly
   },
-  output: "export", // ✅ Required for static exports
+  output: "standalone", // ✅ Required for dynamic music streaming platform
 };
 
 module.exports = nextConfig;
