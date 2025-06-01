@@ -1,10 +1,8 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    unoptimized: true,
+  },
+}
 
-const nextConfig: NextConfig = {
-  output: "standalone", // ✅ Ensure static export for Cloudflare Pages
-  trailingSlash: true, // ✅ Fix potential missing trailing slashes
-  reactStrictMode: true,
-};
-
-export default nextConfig;
-
+module.exports = nextConfig
